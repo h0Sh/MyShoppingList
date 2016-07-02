@@ -1,6 +1,8 @@
-﻿using Prism.Ninject;
-using MyShoppingList.Views;
+﻿using MyShoppingList.Views;
+using Prism.Ninject;
+using Xamarin.Forms.Xaml;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MyShoppingList
 {
     public partial class App : PrismApplication
