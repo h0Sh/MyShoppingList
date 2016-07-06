@@ -5,7 +5,27 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MyShoppingList.Views.MainPage"
              Title="MainPage">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Name="Create" Command="{Binding CreateNewShoppingListCommand}" Order="Primary" Priority="0" Icon=""/>
+  </ContentPage.ToolbarItems>
   <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-    <Label Text="{Binding Title}" />
+    <ListView ItemsSource ="{Binding ShoppingLists}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout BackgroundColor="#eee"
+            Orientation="Vertical">
+              <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding Name}"
+                TextColor="#f35e20" />
+                <Label Text="{Binding Creator}"
+                HorizontalOptions="EndAndExpand"
+                TextColor="#503026" />
+              </StackLayout>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
   </StackLayout>
 </ContentPage>
