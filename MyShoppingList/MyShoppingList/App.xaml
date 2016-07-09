@@ -3,4 +3,31 @@
                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                         xmlns:prism="clr-namespace:Prism.Ninject;assembly=Prism.Ninject.Forms"
                         x:Class="MyShoppingList.App">
+  <prism:PrismApplication.Resources>
+    <ResourceDictionary>
+      <Color x:Key="primary">#00BCD4</Color>
+      <Color x:Key="primary_dark">#0097A7</Color>
+      <Color x:Key="primary_light">#B2EBF2</Color>
+      <Color x:Key="accent">#FF9800</Color>
+      <Color x:Key="primary_text">#212121</Color>
+      <Color x:Key="secondary_text">#727272</Color>
+      <Color x:Key="icons">#FFFFFF</Color>
+      <Color x:Key="background">#FFFFFF</Color>
+      <Color x:Key="divider">#B6B6B6</Color>
+      <Style TargetType="Label"
+             x:Key="primaryLabelStyle">
+        <Setter Property="FontSize"
+                Value="20"/>
+        <Setter Property="TextColor"
+                Value="#212121"/>
+      </Style>
+      <Style TargetType="Label"
+             x:Key="secondaryLabelStyle">
+        <Setter Property="FontSize"
+                Value="16"/>
+        <Setter Property="TextColor"
+                Value="#727272"/>
+      </Style>
+    </ResourceDictionary>
+  </prism:PrismApplication.Resources>
 </prism:PrismApplication>

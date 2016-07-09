@@ -6,21 +6,31 @@
              x:Class="MyShoppingList.Views.MainPage"
              Title="MainPage">
   <ContentPage.ToolbarItems>
-    <ToolbarItem Name="Create" Command="{Binding CreateNewShoppingListCommand}" Order="Primary" Priority="0" Icon=""/>
+    <ToolbarItem Text="Create asdf"
+                 Icon="ic_action_new.png"/>
   </ContentPage.ToolbarItems>
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="Label"
+             BasedOn="{StaticResource primaryLabelStyle}"/>
+      <Style TargetType="Label"
+             BasedOn="{StaticResource secondaryLabelStyle}"
+             x:Key="secondaryLabel"/>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <StackLayout HorizontalOptions="Center"
+               VerticalOptions="Center">
     <ListView ItemsSource ="{Binding ShoppingLists}">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout BackgroundColor="#eee"
-            Orientation="Vertical">
+            <StackLayout BackgroundColor="{StaticResource background}"
+                         Orientation="Vertical">
               <StackLayout Orientation="Horizontal">
-                <Label Text="{Binding Name}"
-                TextColor="#f35e20" />
+                <Label Text="{Binding Name}" />
                 <Label Text="{Binding Creator}"
-                HorizontalOptions="EndAndExpand"
-                TextColor="#503026" />
+                       Style="{StaticResource secondaryLabel}"
+                       HorizontalOptions="EndAndExpand" />
               </StackLayout>
             </StackLayout>
           </ViewCell>
